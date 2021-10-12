@@ -1,0 +1,696 @@
+@font-face {
+  font-family: "Poppins-M";
+  src: url("../font/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-B";
+  src: url("../font/Poppins-Bold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins-M";
+  font-size: 16px;
+  color: hsl(255, 11%, 22%);
+  user-select: none;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  padding: 0 20px 20px;
+  overflow: hidden !important;
+  position: relative;
+}
+
+header nav {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav img:first-of-type {
+  width: 32%;
+}
+
+header nav img:last-of-type {
+  width: 12%;
+}
+
+header nav img:last-of-type.click {
+  opacity: .6;
+}
+
+header nav div {
+  opacity: 0;
+  width: calc(100% - 40px);
+  background-color: hsl(257, 27%, 26%);
+  position: absolute;
+  top: 70px;
+  left: -100%;
+  padding: 15px 30px 20px;
+  transition: .6s;
+  border-radius: 12px;
+}
+
+header nav div.click {
+  opacity: 1;
+  left: 20px;
+}
+
+header nav div ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav div ul li {
+  text-align: center;
+  margin: 5px 0;
+}
+
+header nav div ul li:first-of-type {
+  margin-top: 5px;
+}
+
+header nav div ul li a {
+  display: block;
+  padding: 10px 0;
+  font-family: "Poppins-B";
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+header nav div ul li a:hover {
+  transform: scale(1.1);
+}
+
+header nav div hr {
+  margin: 15px 0;
+  border: none;
+  height: 1px;
+  border-radius: 4px;
+  background-image: linear-gradient(to right, #ccc, #ddd, #fff);
+}
+
+header nav div button {
+  display: block;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-family: "Poppins-B";
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1.4px solid transparent;
+}
+
+header nav div button:first-of-type {
+  border-color: hsl(180, 66%, 49%);
+}
+
+header nav div button:last-of-type {
+  background-color: hsl(180, 66%, 49%);
+}
+
+header nav div button:last-of-type:hover {
+  background-color: hsl(180, 66%, 69%);
+}
+
+header .hero img {
+  width: 150%;
+}
+
+header .hero h1 {
+  font-family: "Poppins-B";
+  font-size: 40px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+header .hero p {
+  text-align: center;
+  line-height: 1.6;
+  color: #aaa;
+  margin: 10px 0;
+}
+
+header .hero button {
+  width: 50%;
+  margin: 10px 25%;
+  border: none;
+  font-family: "Poppins-B";
+  color: white;
+  border-radius: 30px;
+  background-color: hsl(180, 66%, 49%);
+  padding: 10px;
+  transition: .5s;
+}
+
+header .hero button:hover {
+  box-shadow: 0 0 0 2px hsl(180, 66%, 79%);
+  background-color: hsl(180, 66%, 69%);
+}
+
+section {
+  margin: 80px 0 0;
+  text-align: center;
+  background-color: hsl(0, 0%, 94%);
+}
+
+section .input-link,
+section .prod-link {
+  width: 90%;
+  margin: 20px auto;
+  min-height: 130px;
+  border-radius: 10px;
+  background-color: hsl(255, 11%, 22%);
+  padding: 28.5px;
+  position: relative;
+  top: calc(-170px / 2);
+}
+
+section .input-link form {
+  min-height: calc(143px - 30px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+section .input-link {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url("../images/bg-shorten-mobile.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: right top;
+  overflow: hidden;
+}
+
+section .prod-link {
+  display: block;
+  padding: 15px;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+
+section .input-link input {
+  display: block;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: .5s;
+  padding: 10px;
+}
+
+section .input-link input:focus {
+  outline: none;
+}
+
+section .input-link span {
+  font-size: 12px;
+  margin: 4px 0;
+  font-style: italic;
+  color: hsl(0, 87%, 67%);
+  opacity: 0;
+  transition: .6s;
+  transform: translateX(-100%);
+}
+
+section .input-link span.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+section .input-link button,
+section .prod-link button {
+  display: block;
+  padding: 10px;
+  border: 2px solid transparent;
+  color: white;
+  font-family: "Poppins-B";
+  width: 100%;
+  background-color: hsl(180, 66%, 49%);
+  border-radius: 6px;
+  transition: .5s;
+}
+
+section .input-link button:hover,
+section .prod-link button:hover {
+  box-shadow: 0 0 0 2px hsl(180, 66%, 79%);
+  background-color: hsl(180, 66%, 69%);
+}
+
+section .prod-link button.copied {
+  background-color: hsl(255, 11%, 22%);
+  box-shadow: 0 0 0 2px hsl(255, 11%, 80%);
+}
+
+section .prod-link hr {
+  width: calc(100% + 30px);
+  border: none;
+  height: 2px;
+  background-image: linear-gradient(to right, hsl(180, 66%, 69%), hsl(180, 66%, 89%), hsl(180, 66%, 97%));
+  margin: 15px 0;
+  margin-left: -15px;
+}
+
+section .prod-link p {
+  text-align: left;
+  margin: 15px 0;
+  overflow: scroll;
+}
+
+section .prod-link p:first-of-type {
+  margin: 0 0 15px;
+}
+
+section .prod-link p:first-of-type a {
+  text-decoration: none;
+}
+
+section .sp h1 {
+  font-size: 20px;
+  color: hsl(0, 87%, 67%);
+  font-family: "Poppins-B";
+  margin-top: -50px;
+  margin-bottom: 48px;
+}
+
+section .prod-link p:last-of-type a {
+  color: hsl(180, 66%, 49%);
+  text-decoration: none;
+}
+
+section .as h2 {
+  width: 90%;
+  margin: 15px auto;
+  font-family: "Poppins-B";
+  font-size: 25px;
+}
+
+section .cont-fea .features {
+  width: 85%;
+  margin: 80px auto;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+  filter: drop-shadow(0 0 5px #99999999);
+  position: relative;
+}
+
+section .cont-fea .features:first-of-type::after,
+section .cont-fea .features:nth-of-type(2)::after {
+  content: "";
+  width: 8px;
+  height: 45px;
+  background-image: linear-gradient(to top, hsl(255, 11%, 22%), hsl(180, 66%, 49%), #fff);
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section .cont-fea .features h3 {
+  margin: 40px 0 10px;
+  font-family: "Poppins-B";
+  font-size: 22px;
+}
+
+section .cont-fea .features p {
+  line-height: 1.6;
+  color: #aaa;
+}
+
+section .cont-fea .features>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: hsl(255, 11%, 22%);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section .cont-fea .features>div img {
+  width: 60%;
+}
+
+section .as p {
+  width: 94%;
+  margin: 15px auto;
+  line-height: 1.6;
+  color: #999;
+}
+
+section .boost {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url("../images/bg-boost-mobile.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+section .boost h1 {
+  font-size: 28px;
+  margin: 15px auto;
+  font-family: "Poppins-B";
+  color: white;
+}
+
+section .boost button {
+  width: 50%;
+  margin: 15px 25%;
+  border: none;
+  font-family: "Poppins-B";
+  color: white;
+  border-radius: 30px;
+  background-color: hsl(180, 66%, 49%);
+  padding: 10px;
+  transition: .5s;
+}
+
+section .boost button:hover {
+  box-shadow: 0 0 0 2px hsl(180, 66%, 79%);
+  background-color: hsl(180, 66%, 69%);
+}
+
+footer {
+  background-color: hsl(260, 8%, 14%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px 20px;
+}
+
+footer h4 {
+  color: white;
+  margin: 20px auto;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin: 10px 0;
+  color: #DFDFDF;
+}
+
+footer ul li:hover {
+  transform: scale(1.1);
+  color: #f8f8f8;
+}
+
+footer .container div:last-of-type {
+  width: 45%;
+  margin: 15px auto 0;
+  justify-content: space-between;
+  display: flex;
+}
+
+footer .container svg {
+  fill: #FFF;
+}
+
+footer .container svg:hover {
+  transform: scale(1.2);
+  fill: hsl(180, 66%, 49%);
+}
+
+.attribution,
+.attribution a {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  background-color: hsl(260, 8%, 14%);
+}
+
+@media (min-width: 375px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header nav {
+    width: 100%;
+  }
+
+  header nav div {
+    width: 80%;
+    position: static;
+    opacity: 1;
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header nav img:first-of-type {
+    width: 15%;
+  }
+
+  header nav img:last-of-type,
+  header nav div hr {
+    display: none;
+  }
+
+  header nav div ul {
+    width: 80%;
+    display: flex;
+  }
+
+  header nav div ul li a {
+    color: #A4A4A4;
+    font-size: 16px;
+    margin-right: 15px;
+  }
+
+  header nav div ul li a:hover {
+    color: #24242d;
+  }
+
+  header nav div button {
+    width: 20%;
+    margin: 0;
+    border: none;
+    padding: 5px;
+  }
+
+  header nav div button:first-of-type {
+    margin-right: 10px;
+    border: 1px solid hsl(180, 66%, 49%);
+    color: #a4a4a4;
+  }
+
+  header .hero {
+    margin: 100px 0 70px;
+    position: relative;
+  }
+
+  header .hero img {
+    width: 80%;
+    position: absolute;
+    right: -230px;
+    top: -60px;
+  }
+
+  header .hero>div {
+    margin-top: -30px;
+    width: 60%;
+  }
+
+  header .hero>div h1,
+  header .hero>div p {
+    text-align: left;
+  }
+
+  header .hero>div h1 {
+    font-size: 45px;
+  }
+
+  header .hero>div p {
+    width: 70%;
+  }
+
+  header .hero>div button {
+    width: 35%;
+    padding: 10px;
+    margin: 10px 0;
+    margin-right: 65%;
+  }
+
+  section .input-link,
+  section .prod-link {
+    width: 100%;
+    padding: 15px;
+    min-height: fit-content;
+    top: calc(-95px / 2);
+  }
+  section .input-link {
+    background-image: url("../images/bg-shorten-desktop.svg");
+    background-size: cover ;
+  }
+  section .input-link input {
+    order: -1;
+    width: 80%;
+    margin-right: 2%;
+  }
+
+  section .input-link button {
+    order: -1;
+    width: 18%;
+  }
+
+  section .input-link form {
+    min-height: 65px;
+    position: relative;
+  }
+
+  section .input-link form span {
+    position: absolute;
+    bottom: -16px;
+  }
+
+  section .prod-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  section .prod-link hr {
+    display: none;
+  }
+
+  section .prod-link button {
+    width: 15%;
+    padding: 8px;
+  }
+
+  section .prod-link p:first-of-type {
+    width: 56%;
+    margin: 0;
+  }
+
+  section .prod-link p:last-of-type {
+    width: 28%;
+    margin: 0;
+  }
+
+  section .as {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  section .cont-fea {
+    display: flex;
+    margin: 50px auto 70px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  section .cont-fea .features {
+    width: 32%;
+    padding: 0 15px;
+    margin: 0;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  section .cont-fea .features h3 {
+    margin: 50px 0 6px;
+  }
+
+  section .cont-fea .features p {
+    margin: 6px 0;
+    line-height: normal;
+  }
+
+  section .cont-fea .features>div {
+    left: 25%;
+  }
+
+  section .cont-fea .features:first-of-type {
+    margin-bottom: 80px;
+  }
+
+  section .cont-fea .features:nth-of-type(2) {
+    margin-bottom: -40px;
+  }
+
+  section .cont-fea .features:last-of-type {
+    margin-bottom: -150px;
+  }
+
+  section .cont-fea .features:first-of-type:after,
+  section .cont-fea .features:nth-of-type(2):after {
+    width: 15.5px;
+    height: 8px;
+    background-image: linear-gradient(to right,hsl(180, 66%, 49%),hsl(180, 66%,59%),hsl(180, 66%,69%),hsl(180, 66%,79%));
+    bottom: 50% ;
+    left: auto ;
+    right: -15.5px ;
+    transform: translateY(-50%);
+  }
+  section .cont-fea .features:first-of-type:after {
+    bottom: 25% ;
+  }
+  section .boost {
+    background-image: url("../images/bg-boost-desktop.svg") ;
+    background-size: cover ;
+  }
+  section .boost button {
+    width: 20% ; 
+  }
+  footer {
+    padding: 40px ;
+  }
+  footer .container {
+    display: flex ;
+    align-items: flex-start ;
+    justify-content: space-between ;
+  }
+  footer .container div {
+    width: fit-content ;
+    margin: 0 ;
+    text-align: left ;
+  }
+  footer .container div h4 {
+    margin: 0 0 10px ;
+    font-size: 15px ;
+  }
+  footer .container div ul li {
+    margin: 5px 0 ;
+    font-size: 14px ;
+  }
+  footer .container div:last-of-type {
+    display: block ;
+    margin: 0 ;
+    width: fit-content ;
+  }
+  footer .container div:last-of-type svg {
+    margin: 0 5px ;
+  }
+  footer .container img {
+    width: 18% ;
+    margin-right: 10% ;
+  }
+}
